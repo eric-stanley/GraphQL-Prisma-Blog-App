@@ -4,7 +4,7 @@
   "description": "Sample graphql blog app",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "env-cmd -f ./config/prod.env node dist/index.js",
     "heroku-prebuild": "babel src --out-dir dist --copy-files",
     "dev": "env-cmd -f ./config/dev.env nodemon src/index.js --ext js,graphql --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"
